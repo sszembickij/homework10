@@ -11,15 +11,22 @@ public class HomeWork1003 {
     public static void main(String[] args) {
         char[] charArray = new char[1 + 10 + 26 + 26];
         setCharArray(charArray);
-        System.out.println(setPassword(charArray));
+        String password = setPassword(charArray);
+        System.out.println(password);
     }
 
     public static String setPassword(char[] array) {
         StringBuilder password = new StringBuilder();
         Random random = new Random();
-        for (int i = 0; i < 8; i++) {
-            password.append(array[random.nextInt(array.length)]);
-        }
+        boolean isValidPassword = false;
+        do {
+            password.delete(0, password.length());
+            for (int i = 0; i < 8; i++) {
+                password.append(array[random.nextInt(array.length)]);
+            }
+        } while (!password.toString().matches("(.*)[A-Z](.*)(.*)")
+                || !password.toString().matches("(.*)[a-z](.*)")
+                || !password.toString().matches("(.*)[0-9](.*)"));
         return password.toString();
     }
 
