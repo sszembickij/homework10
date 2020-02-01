@@ -152,6 +152,4 @@ public class HomeWork1005 {
             k++;
         }
     }
-
-
 }
