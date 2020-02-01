@@ -17,7 +17,7 @@ public class HomeWork1002 {
         StringBuilder result = new StringBuilder();
         String[] arrString = string.split("\\s+");
         for (int i = 0; i < arrString.length; i++) {
-            result.append(arrString[i].substring(0,1).toUpperCase()).append(arrString[i].substring(1).toLowerCase());
+            result.append(arrString[i].substring(0, 1).toUpperCase()).append(arrString[i].substring(1).toLowerCase());
             result.append(" ");
         }
         return result.toString().trim();

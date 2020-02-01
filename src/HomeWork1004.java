@@ -19,9 +19,8 @@ public class HomeWork1004 {
     }
 
 
-
     protected static int sortSelect(int[] array) {
-        int[] sortArray = Arrays.copyOf(array,array.length);
+        int[] sortArray = Arrays.copyOf(array, array.length);
         int temp;
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < sortArray.length - 1; i++) {
@@ -40,7 +39,7 @@ public class HomeWork1004 {
     }
 
     protected static int sortBubble(int[] array) {
-        int[] sortArray = Arrays.copyOf(array,array.length);
+        int[] sortArray = Arrays.copyOf(array, array.length);
         int temp;
         long startTime = System.currentTimeMillis();
         boolean needIteration = true;
@@ -60,7 +59,7 @@ public class HomeWork1004 {
     }
 
     protected static int sortInsert(int[] array) {
-        int[] sortArray = Arrays.copyOf(array,array.length);
+        int[] sortArray = Arrays.copyOf(array, array.length);
         int temp;
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < sortArray.length; i++) {

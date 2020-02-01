@@ -14,9 +14,9 @@ public class HomeWork1003 {
         System.out.println(setPassword(charArray));
     }
 
-    public static String setPassword(char[] array){
-        StringBuilder password=new StringBuilder();
-        Random random=new Random();
+    public static String setPassword(char[] array) {
+        StringBuilder password = new StringBuilder();
+        Random random = new Random();
         for (int i = 0; i < 8; i++) {
             password.append(array[random.nextInt(array.length)]);
         }

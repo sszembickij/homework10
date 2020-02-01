@@ -14,7 +14,7 @@ public class HomeWork1005 {
 
 
     protected static int runSortQuick(int[] array) {
-        int[] sortArray = Arrays.copyOf(array,array.length);
+        int[] sortArray = Arrays.copyOf(array, array.length);
         long startTime = System.currentTimeMillis();
         sortQuick(sortArray, 0, sortArray.length - 1);
         long timeSpent = System.currentTimeMillis() - startTime;
@@ -22,7 +22,7 @@ public class HomeWork1005 {
     }
 
     protected static int runSortHeap(int[] array) {
-        int[] sortArray = Arrays.copyOf(array,array.length);
+        int[] sortArray = Arrays.copyOf(array, array.length);
         long startTime = System.currentTimeMillis();
         buildheap(sortArray);
         int sizeOfHeap = sortArray.length - 1;
@@ -38,7 +38,7 @@ public class HomeWork1005 {
     }
 
     protected static int runSortMerge(int[] array) {
-        int[] sortArray = Arrays.copyOf(array,array.length);
+        int[] sortArray = Arrays.copyOf(array, array.length);
         int temp;
         long startTime = System.currentTimeMillis();
         sortMerge(sortArray, 0, sortArray.length - 1);
@@ -106,54 +106,47 @@ public class HomeWork1005 {
     }
 
     private static void sortMerge(int array[], int beg, int end) {
-        if (beg<end)
-        {
-            int mid = (beg+end)/2;
+        if (beg < end) {
+            int mid = (beg + end) / 2;
             sortMerge(array, beg, mid);
-            sortMerge(array , mid+1, end);
+            sortMerge(array, mid + 1, end);
             merge(array, beg, mid, end);
         }
     }
 
-    private static void merge(int array[], int beg, int mid, int end){
+    private static void merge(int array[], int beg, int mid, int end) {
         int l = mid - beg + 1;
         int r = end - mid;
 
-        int[] leftArray = new int [l];
-        int[] rightArray = new int [r];
+        int[] leftArray = new int[l];
+        int[] rightArray = new int[r];
 
-        for (int i=0; i<l; ++i)
+        for (int i = 0; i < l; ++i)
             leftArray[i] = array[beg + i];
 
-        for (int j=0; j<r; ++j)
-            rightArray[j] = array[mid + 1+ j];
+        for (int j = 0; j < r; ++j)
+            rightArray[j] = array[mid + 1 + j];
 
 
         int i = 0, j = 0;
         int k = beg;
-        while (i<l&&j<r)
-        {
-            if (leftArray[i] <= rightArray[j])
-            {
+        while (i < l && j < r) {
+            if (leftArray[i] <= rightArray[j]) {
                 array[k] = leftArray[i];
                 i++;
-            }
-            else
-            {
+            } else {
                 array[k] = rightArray[j];
                 j++;
             }
             k++;
         }
-        while (i<l)
-        {
+        while (i < l) {
             array[k] = leftArray[i];
             i++;
             k++;
         }
 
-        while (j<r)
-        {
+        while (j < r) {
             array[k] = rightArray[j];
             j++;
             k++;
