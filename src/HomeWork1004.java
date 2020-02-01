@@ -82,7 +82,5 @@ public class HomeWork1004 {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(array.length);
         }
-
-
     }
 }
